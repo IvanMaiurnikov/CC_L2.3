@@ -61,7 +61,6 @@ set_location_assignment PIN_86 -to Q2
 set_location_assignment PIN_85 -to Q1
 set_global_assignment -name BDF_FILE prio.bdf
 set_global_assignment -name BDF_FILE CD_8_3.bdf
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_location_assignment PIN_91 -to X[7]
 set_location_assignment PIN_90 -to X[6]
 set_location_assignment PIN_89 -to X[5]
@@ -70,3 +69,4 @@ set_location_assignment PIN_83 -to X[3]
 set_location_assignment PIN_80 -to X[2]
 set_location_assignment PIN_77 -to X[1]
 set_location_assignment PIN_76 -to X[0]
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

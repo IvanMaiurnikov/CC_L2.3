@@ -32,14 +32,22 @@ vsim work.cd_8_3_prio
 # Loading cycloneive.cycloneive_atom_pack(body)
 # Loading cycloneive.cycloneive_components
 # Loading work.cd_8_3_prio(structure)
+# Loading cycloneive.cycloneive_io_ibuf(arch)
 # Loading ieee.std_logic_arith(body)
 # Loading cycloneive.cycloneive_io_obuf(arch)
-# Loading cycloneive.cycloneive_io_ibuf(arch)
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
-wave create -driver freeze -pattern repeater -initialvalue UUUUUUUU -period 100ps -sequence { 00000000 00000001 00000011 00000111 00001111 00011111 00111111 01111111 11111111  } -repeat forever -range 7 0 -starttime 0ps -endtime 900ps sim:/cd_8_3_prio/X
+wave create -driver freeze -pattern repeater -initialvalue UUUUUUUU -period 100ps -sequence { 00000000 00000001 00000011 00000111 00001111 00011111 00111111 01111111 11111111  } -repeat 1 -range 7 0 -starttime 0ps -endtime 900ps sim:/cd_8_3_prio/X
 wave create -driver freeze -pattern constant -value 1 -starttime 0ps -endtime 900ps sim:/cd_8_3_prio/W
 add wave -position end  sim:/cd_8_3_prio/Q1
 add wave -position end  sim:/cd_8_3_prio/Q2
 add wave -position end  sim:/cd_8_3_prio/Q4
 run -all
-wave editwrite -file E:/home/dizon/projects/Quartus/Lab2_3/simulation/modelsim/wave.do
+wave create -driver freeze -pattern repeater -initialvalue 11111111 -period 100ps -sequence { 00000000 00000001 00000011 00000111 00001111 00011111 00111111 01111111 11111111 00000000 00000001 00000011 00000111 00001111 00011111 00111111 01111111 11111111  } -repeat 1 -range 7 0 -starttime 0ps -endtime 1800ps sim:/cd_8_3_prio/X
+# /cd_8_3_prio/X already exists in the wave, cannot add twice
+# Usage: wave create -pattern <clock|constant|random|repeater|counter|none> <args>
+# See Command Reference manual for pattern specific <args>
+wave create -driver freeze -pattern constant -value 1 -starttime 0ps -endtime 1800ps sim:/cd_8_3_prio/W
+# /cd_8_3_prio/W already exists in the wave, cannot add twice
+# Usage: wave create -pattern <clock|constant|random|repeater|counter|none> <args>
+# See Command Reference manual for pattern specific <args>
+wave editwrite -file D:/Projects/Vano/QUARTUS/CC_L2.3/simulation/modelsim/wave.do
