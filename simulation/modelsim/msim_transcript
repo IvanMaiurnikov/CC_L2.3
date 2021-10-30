@@ -1,0 +1,45 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do CD_8_3_PRIO_run_msim_gate_vhdl.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Copying c:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied c:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {CD_8_3_PRIO_8_1200mv_85c_slow.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneive_atom_pack
+# -- Loading package cycloneive_components
+# -- Compiling entity CD_8_3_PRIO
+# -- Compiling architecture structure of CD_8_3_PRIO
+# 
+vsim work.cd_8_3_prio
+# vsim work.cd_8_3_prio 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneive.cycloneive_atom_pack(body)
+# Loading cycloneive.cycloneive_components
+# Loading work.cd_8_3_prio(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneive.cycloneive_io_obuf(arch)
+# Loading cycloneive.cycloneive_io_ibuf(arch)
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
+wave create -driver freeze -pattern repeater -initialvalue UUUUUUUU -period 100ps -sequence { 00000000 00000001 00000011 00000111 00001111 00011111 00111111 01111111 11111111  } -repeat forever -range 7 0 -starttime 0ps -endtime 900ps sim:/cd_8_3_prio/X
+wave create -driver freeze -pattern constant -value 1 -starttime 0ps -endtime 900ps sim:/cd_8_3_prio/W
+add wave -position end  sim:/cd_8_3_prio/Q1
+add wave -position end  sim:/cd_8_3_prio/Q2
+add wave -position end  sim:/cd_8_3_prio/Q4
+run -all
+wave editwrite -file E:/home/dizon/projects/Quartus/Lab2_3/simulation/modelsim/wave.do
